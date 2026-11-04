@@ -582,6 +582,11 @@
 #p3 .zdk{background:#2b3128 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='64'%3E%3Cpath d='M28 2l26 15v30L28 62 2 47V17z' fill='none' stroke='%23ffffff' stroke-opacity='.045'/%3E%3C/svg%3E");color:#fff}
 #p3 .zhero{display:grid;grid-template-columns:1.3fr 1fr;align-items:center;gap:30px;padding:70px 0 80px}
 #p3 .zpl{display:inline-block;background:#3a4433;color:#8fb35a;font-size:11px;font-weight:700;letter-spacing:.12em;border-radius:99px;padding:6px 14px;margin-bottom:26px}
+#p3 .zan{display:flex;width:fit-content;max-width:100%;align-items:center;gap:8px;background:#3a4433;border:1px solid #4d5a44;border-radius:99px;padding:4px 14px 4px 5px;font-size:12px;font-weight:600;color:#e6ece0;margin-bottom:14px}
+#p3 .zan b{background:#6a8f33;color:#fff;border-radius:99px;padding:2px 10px;font-size:11px;font-weight:700}
+#p3 .zan:hover{border-color:#8fb35a}
+#p3 .zrow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:26px}
+#p3 .zrow .zpl,#p3 .zrow .zan{margin-bottom:0}
 #p3 .zhero h1{font-size:clamp(38px,6vw,60px);line-height:1.05;letter-spacing:-.03em;font-weight:700;margin:0 0 24px;max-width:none}
 #p3 .zhero h1 em{font-style:normal;color:#8fb35a}
 #p3 .zhero p{color:#b6bdb0;font-size:17px;max-width:30em;margin:0 0 26px}
@@ -1053,7 +1058,7 @@ body{margin:0;background:#050505;font-family:"Plus Jakarta Sans",system-ui,sans-
 <div class="pg" id="p3" hidden>
 <header><div class="zw zb"><button class="zbr" id="zbrand"><span class="zlg"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 3h10v2h3v3a4 4 0 0 1-4 4h-.3A5 5 0 0 1 13 14.9V17h3v2H8v-2h3v-2.1A5 5 0 0 1 8.3 12H8a4 4 0 0 1-4-4V5h3zM6 7v1a2 2 0 0 0 1 1.7V7zm12 0h-1v2.7A2 2 0 0 0 18 8z"/></svg></span><span><b>Tito Awards</b><small>RECOGNITION PLATFORM</small></span></button><nav class="znv"><a data-s="zabout">About</a><a data-s="zhow">How It Works</a><a data-s="zcat">Categories</a><a data-s="zfaq">FAQs</a></nav><button class="zbt">Log In</button></div></header>
 <div id="zhome">
-<section class="zdk" id="zabout"><div class="zw zhero"><div><span class="zpl">● Q3 2026 VOTING OPEN</span><h1>Recognize the <em>workers</em> who keep the hive alive.</h1><p>Tito Awards is your company’s home for peer-driven recognition. Nominate colleagues, cast anonymous votes, and celebrate the people who make work better.</p><div class="zbs"><button class="zbt">Log In to Vote</button><button class="zbt o" data-s="zhow">How It Works</button></div></div>
+<section class="zdk" id="zabout"><div class="zw zhero"><div><div class="zrow"><span class="zpl">● Q3 2026 VOTING OPEN</span><button class="zan" id="zgo"><b>New</b>v1.0.21 is out · See what’s new →</button></div><h1>Recognize the <em>workers</em> who keep the hive alive.</h1><p>Tito Awards is your company’s home for peer-driven recognition. Nominate colleagues, cast anonymous votes, and celebrate the people who make work better.</p><div class="zbs"><button class="zbt">Log In to Vote</button><button class="zbt o" data-s="zhow">How It Works</button></div></div>
 <div class="zor"><i style="top:36px;left:176px"></i><i style="top:56px;left:46px"></i><i style="top:122px;right:10px"></i><i style="top:132px;left:2px"></i><i style="bottom:36px;left:140px"></i><i style="bottom:30px;right:30px"></i><span class="zlg"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 3h10v2h3v3a4 4 0 0 1-4 4h-.3A5 5 0 0 1 13 14.9V17h3v2H8v-2h3v-2.1A5 5 0 0 1 8.3 12H8a4 4 0 0 1-4-4V5h3zM6 7v1a2 2 0 0 0 1 1.7V7zm12 0h-1v2.7A2 2 0 0 0 18 8z"/></svg></span></div></div></section>
 <section class="zsec" id="zhow"><div class="zw"><div class="zey">SIMPLE PROCESS</div><h2>How It Works</h2><p>Three simple steps. No politics, no public shaming — just honest recognition.</p>
 <div class="zst"><div class="zc"><div class="n">01</div><h3>Nominate a Colleague</h3><p>Browse your team and select someone who embodies one of the five core values. Self-nominations are welcome too.</p></div><b>→</b><div class="zc"><div class="n">02</div><h3>Cast Your Vote</h3><p>Write a short, heartfelt reason for your nomination. Votes stay anonymous unless you choose to show your name.</p></div><b>→</b><div class="zc"><div class="n">03</div><h3>Winners Announced</h3><p>At the end of each period, award winners are revealed with vote counts. Summaries are reviewed and published by HR.</p></div></div>
@@ -1230,7 +1235,7 @@ apply:(a,n,i)=>{const b=btns[i],o=b.querySelector(".bdg");if(o)o.remove();if(n){
 restore:()=>btns.forEach(b=>{const o=b.querySelector(".bdg");if(o)o.remove();b.classList.remove("qh")}),
 reveal:m=>sel(arts.indexOf(m.closest("article")))});
 const view=(v,t)=>{$("zhome").classList.toggle("hide",v==="r");$("zrel").classList.toggle("hide",v!=="r");scrollTo(0,0);if(t)setTimeout(()=>$(t).scrollIntoView(),30)};
-$("zfv").textContent="v"+R[0].v;$("zfn").onclick=$("zfv").onclick=()=>view("r");$("zback").onclick=()=>view("h");
+$("zfv").textContent="v"+R[0].v;$("zgo").onclick=$("zfn").onclick=$("zfv").onclick=()=>view("r");$("zback").onclick=()=>view("h");
 $("p3").querySelectorAll("[data-s]").forEach(a=>a.onclick=()=>{if(!$("zhome").classList.contains("hide"))$(a.dataset.s).scrollIntoView();else view("h",a.dataset.s)});
 $("zbrand").onclick=()=>view("h");
 })();
